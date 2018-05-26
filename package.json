@@ -1,0 +1,28 @@
+{
+  "name": "dbstudio",
+  "version": "1.0.0",
+  "description": "personal website",
+  "main": "main.js",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "bootstrap": "^3.3.7",
+    "bower": "^1.8.2",
+    "express": "^4.16.3",
+    "heroku": "^7.0.41",
+    "nodemailer": "^4.6.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimonguitars/about-me-website.git"
+  },
+  "author": "Dmitriy B",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dimonguitars/about-me-website/issues"
+  },
+  "homepage": "https://github.com/dimonguitars/about-me-website#readme"
+}

@@ -1,0 +1,20 @@
+{
+  "name": "mywebsite",
+  "description": "personal website",
+  "main": "main.js",
+  "authors": [
+    "Dmitriy B"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/dimonguitars/about-me-website",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
