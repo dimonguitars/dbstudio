@@ -48,6 +48,6 @@ app.get('*', function(req, res) {
   res.status(404).send('<h1>uh oh! page not found!</h1>');
 });
 
-var server = app.listen(3000, function(){
+var server = app.listen(process.env.PORT || 3000, function(){
   console.log('Open http://localhost:3000 in the browser');
 });
