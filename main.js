@@ -15,8 +15,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.get('/', function(req, res){
     res.sendFile('/index.html');
 });
-
-console.log(process.env.GMAIL_PASS)
+console.log(process.env.GMAIL_USER)
 app.post('/form', function(req, res){
 
   let transporter = nodemailer.createTransport({
