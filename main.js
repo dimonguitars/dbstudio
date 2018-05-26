@@ -3,6 +3,7 @@ var app = express();
 var path = require('path');
 var nodemailer = require('nodemailer');
 var bodyParser = require('body-parser')
+require('dotenv').config();
 
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -15,14 +16,14 @@ app.get('/', function(req, res){
     res.sendFile('/index.html');
 });
 
-
+console.log(process.env.GMAIL_PASS)
 app.post('/form', function(req, res){
 
   let transporter = nodemailer.createTransport({
     service: 'gmail',
   auth: {
-    user: 'varreact@gmail.com',
-    pass: 'B7183325050'
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_PASS
   }
   })
   var mailOptions = {
