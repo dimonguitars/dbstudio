@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var nodemailer = require('nodemailer');
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
 require('dotenv').config();
 
 
@@ -15,32 +15,47 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.get('/', function(req, res){
     res.sendFile('/index.html');
 });
-console.log(process.env.GMAIL_USER)
-app.post('/form', function(req, res){
-
-  let transporter = nodemailer.createTransport({
-    service: 'gmail',
-  auth: {
-    user: process.env.GMAIL_USER,
-    pass: process.env.GMAIL_PASS
-  }
-  })
-  var mailOptions = {
-    sender: "here is from section",
-    to: 'varreact@gmail.com',
-    subject: req.body.email,
-    text: req.body.message
-  };
-
-  if (req.body.email ==='') {
-    return;
-  } else if (req.body.message ==='') {
-     return;
-  } else {
-    transporter.sendMail(mailOptions)
-    setTimeout(function(){ res.redirect('/') }, 1500);
-  }
+app.get('/form', function(req, res){
+  res.redirect('/')
 })
+app.post('/form', function (req, res) {
+  let name = req.body.name;
+  let email = req.body.email;
+  let message = req.body.message;
+    if(name === ""){
+      console.log('name required')
+      return;
+    } else if(email === ""){
+      console.log('email required')
+      return;
+    } else if (message === ""){
+      return;
+      console.log('message required')
+    } else {
+      let mailOpts, smtpTrans;
+      smtpTrans = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
+        auth: {
+          user: process.env.GMAIL_USER,
+          pass: process.env.GMAIL_PASS
+        }
+      });
+
+      mailOpts = {
+        from: req.body.name + ' &lt;' + req.body.email + '&gt;',
+        to: process.env.GMAIL_USER,
+        subject: 'New message from dblot.io',
+        text: `${req.body.name} (${req.body.email}) says: ${req.body.message}`
+      };
+      smtpTrans.sendMail(mailOpts)
+      setTimeout(function(){ res.redirect('/') }, 1500)
+    }
+
+
+});
+
 
 
 
