@@ -71,7 +71,6 @@ h5 {
    url(img/main-bg1.jpg); */
    position:relative;
    width: 100%;
-   min-height: 400px;
    background-color: #252a30;
    background-size: cover;
    background-position: center;
