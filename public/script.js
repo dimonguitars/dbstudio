@@ -1,12 +1,21 @@
 $(document).ready(function() {
 
+
   $("#available").click(function() {
     console.log('scroll')
       $('html,body').animate({
           scrollTop: $("#about-me").offset().top},
           'slow');
   });
+
+  if(window.location.href.indexOf('#exampleModal') != 1) {
+      $('#exampleModal').modal('show');
+    } else {
+      console.log(window.location.href.indexOf('#exampleModal'))
+    }
 });
+
+
 
 function submitForm(){
       var name = $('#recipient-name').val()

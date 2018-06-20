@@ -3,14 +3,13 @@
 
 <head>
 	<meta charset="UTF-8">
-	<title>dBStudio Web-Develop</title>
+	<title>dBStudio</title>
 	<meta name="keywords" content="Mobile App developer Android IOS react-native">
 	<meta name="description" content="Mobile App develop from scratch for Android and Ios platform">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="bootstrap/dist/css/bootstrap.min.css"></link>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	<script src="bootstrap/dist/js/bootstrap.min.js">
-	</script>
+	<script src="bootstrap/dist/js/bootstrap.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	<link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
@@ -232,7 +231,7 @@
 		 <div class="contact"><h2>Ready to work a bit?</h2></div>
 	 <p>I'm currently accepting new projects and would love to hear about yours.</p>
 	 <p>	Please take a few minutes to tell me about it.</p>
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+   <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
  <a id='contact' >get started</a>
 </button>
 </div>
@@ -242,7 +241,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Please describe your project</h5>
+        <h5 class="modal-title"><%= formMessage %></h5>
 				<div id="exampleModalLabel"></div>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
@@ -266,7 +265,7 @@
 									<textarea class="form-control" id="message" type="textarea" rows="5" name='message'placeholder="Your message"></textarea>
 								</div>
 								<div class="send-button">
-										<button type="submit" value='submit request' id='submit' class="btn btn-primary" align="center" onclick='submitForm();'>Send message</button>
+										<button type="submit" value='submit request' id='submit' class="btn btn-primary" align="center"'>Send message</button>
 								</div>
           	 </div>
 				 	</form>
